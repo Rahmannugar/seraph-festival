@@ -72,7 +72,7 @@ const NewsLetter = () => {
           />
         </div>
         <div>
-          <button className="uppercase mt-5 lg:mt-0 py-4 px-5 text-center font-black transition-all ease-in-out duration-300 cursor-pointer text-white bg-[#e25052] hover:bg-black">
+          <button className="uppercase mt-5 lg:mt-0 py-3 px-5 rounded-md text-center font-black transition-all ease-in-out duration-300 cursor-pointer text-white bg-[#e25052] hover:bg-black">
             subscribe
           </button>
         </div>
