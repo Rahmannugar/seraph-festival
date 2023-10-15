@@ -14,7 +14,7 @@ const AppContext = ({ children }) => {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(false);
-  const [show, setShow] = useState(false);
+  const [state, setState] = useState([]);
 
   const contextValue = {
     loading,
@@ -41,8 +41,8 @@ const AppContext = ({ children }) => {
     setLastname,
     firstname,
     setFirstname,
-    show,
-    setShow,
+    state,
+    setState,
   };
 
   return (

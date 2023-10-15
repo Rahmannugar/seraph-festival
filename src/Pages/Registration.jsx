@@ -19,10 +19,12 @@ const Registration = () => {
     setLastname,
     email,
     setEmail,
+    state,
+    setState,
   } = useContext(GlobalContext);
 
   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const countryUrl = "https://states-and-cities.com/api/v1/states.";
+  const stateUrl = "https://nga-states-lga.onrender.com/fetch";
   const registerUrl = "https://seraphfestival-backend.onrender.com/register";
 
   useEffect(() => {
@@ -31,9 +33,11 @@ const Registration = () => {
     }, 3500);
 
     axios
-      .get(countryUrl)
+      .get(stateUrl)
       .then((res) => {
-        console.log(res.data);
+        let data = res.data;
+        //console.log(data)
+        setState(data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -163,10 +167,15 @@ const Registration = () => {
 
                     <div>
                       <label className="block mb-2 text-sm font-medium text-gray-900 :text-white">
-                        Select Country:
+                        Select state of residence:
                       </label>
                       <select className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 :bg-gray-700 :border-gray-600 :placeholder-gray-400 :text-white :focus:ring-blue-500 :focus:border-blue-500">
-                        <option value="">Select Country</option>
+                        <option value="">Select state of residence</option>
+                        {state.map((stateOption) => (
+                          <option key={stateOption} value={stateOption}>
+                            {stateOption}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
