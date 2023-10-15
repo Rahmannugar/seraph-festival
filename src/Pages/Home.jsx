@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import BarLoader from "react-spinners/BarLoader";
 import { GlobalContext } from "../Context";
-import Navbar from "../Components/Navbar";
-import Carousel from "../Components/Carousel";
-import Timer from "../Components/Timer";
-import EventList from "../Components/EventList";
-import NewsLetter from "../Components/NewsLetter";
-import Footer from "../Components/Footer";
+const Navbar = React.lazy(() => import("../Components/Navbar"));
+const Carousel = React.lazy(() => import("../Components/Carousel"));
+const Timer = React.lazy(() => import("../Components/Timer"));
+const EventList = React.lazy(() => import("../Components/EventList"));
+const NewsLetter = React.lazy(() => import("../Components/NewsLetter"));
+const Footer = React.lazy(() => import("../Components/Footer"));
 
 const Home = () => {
   const { loading, setLoading } = useContext(GlobalContext);

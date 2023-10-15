@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../Context";
 import BarLoader from "react-spinners/BarLoader";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
-
+const Navbar = React.lazy(() => import("../Components/Navbar"));
+const Footer = React.lazy(() => import("../Components/Footer"));
 const EventPlan = () => {
   const { loading, setLoading } = useContext(GlobalContext);
   const { hidden } = useContext(GlobalContext);

@@ -24,7 +24,9 @@ const NewsLetter = () => {
         "You have successfully subscribed to our newsletter!",
         "success"
       );
-      window.location.href = "/";
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 2000);
     }
   };
   return (

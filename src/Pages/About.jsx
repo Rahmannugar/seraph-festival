@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../Context";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+const Navbar = React.lazy(() => import("../Components/Navbar"));
+const Footer = React.lazy(() => import("../Components/Footer"));
 import BarLoader from "react-spinners/BarLoader";
 import about from "../images/BCF_2023_Sunday_WR-648-Dominic-Mould-342-1.jpg";
 
