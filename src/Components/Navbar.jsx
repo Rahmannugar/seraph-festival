@@ -10,7 +10,20 @@ const Navbar = () => {
   const { hidden, setHidden } = useContext(GlobalContext);
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: false,
+    });
+
+    const handleScroll = () => {
+      if (window.pageYOffset === 0) {
+        AOS.refresh();
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -36,12 +49,14 @@ const Navbar = () => {
         >
           <ul className=" flex flex-col md:flex-row md:items-center gap-8 md:gap-[4vw]">
             <a
+              data-aos="fade-down"
               className="hover:text-purple-600 font-black text-lg md:text-2xl"
               href="/event"
             >
               Events
             </a>
             <a
+              data-aos="fade-down"
               className="hover:text-purple-600 font-black text-lg md:text-2xl"
               href="/about"
             >
