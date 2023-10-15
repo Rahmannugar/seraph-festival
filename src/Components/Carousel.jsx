@@ -5,12 +5,17 @@ import {
   BsFillArrowLeftCircleFill,
 } from "react-icons/bs";
 import { GlobalContext } from "../Context";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Carousel = () => {
   const { current, setCurrent, currentIndex, setCurrentIndex } =
     useContext(GlobalContext);
 
   useEffect(() => {
+    AOS.init({
+      once: false,
+    });
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
@@ -37,6 +42,8 @@ const Carousel = () => {
       <div className="overflow-hidden relative md:hidden">
         <div
           className={`flex transition ease-out duration-40}`}
+          data-aos="fade-up"
+          data-aos-duration="1000"
           style={{
             transform: `translateX(-${current * 100}%)`,
           }}
@@ -49,12 +56,16 @@ const Carousel = () => {
         <div className="absolute top-0 h-full w-full justify-between flex items-center text-white px-5 text-3xl sm:text-4xl md:text-6xl">
           <button
             onClick={prevSlide}
+            data-aos="fade-right"
+            data-aos-duration="1000"
             className="duration-200 transition-opacity opacity-70 hover:opacity-100 active:opacity-100"
           >
             <BsFillArrowLeftCircleFill />
           </button>
           <button
             onClick={nextSlide}
+            data-aos="fade-left"
+            data-aos-duration="1000"
             className="duration-200 transition-opacity opacity-70 hover:opacity-100 active:opacity-100"
           >
             <BsFillArrowRightCircleFill />
@@ -65,7 +76,11 @@ const Carousel = () => {
           <h1> Seraph Festival: 2024</h1>
         </div>
 
-        <div className="absolute bottom-6 py-4 flex justify-center gap-3 w-full">
+        <div
+          className="absolute bottom-6 py-4 flex justify-center gap-3 w-full"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           {images.map((image, index) => (
             <div
               onClick={() => {

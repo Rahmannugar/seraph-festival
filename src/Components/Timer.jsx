@@ -1,5 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../Context";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Timer = () => {
   const {
@@ -42,17 +44,26 @@ const Timer = () => {
   };
 
   useEffect(() => {
+    AOS.init({
+      once: false,
+    });
     startTimer();
   }, []);
 
   return (
     <div className="mt-7 md:mt-10" id="timer-container">
-      <h1 className="font-extrabold text-center pb-4 text-xl md:text-3xl">
+      <h1
+        className="font-extrabold text-center pb-4 text-xl md:text-3xl"
+        data-aos="fade-right"
+        data-aos-duration="1200"
+      >
         Date: 10th, November 2024.
       </h1>
       <div id="timer">
         <div
           id="clock"
+          data-aos="fade-up"
+          data-aos-duration="1300"
           className="relative m-auto flex justify-center items-center bg-purple-600 h-24 w-72 text-purple-200 font-extrabold rounded-xl"
         >
           <section className="p-2 flex flex-col justify-center items-center">

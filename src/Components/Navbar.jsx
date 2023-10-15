@@ -13,17 +13,6 @@ const Navbar = () => {
     AOS.init({
       once: false,
     });
-
-    const handleScroll = () => {
-      if (window.pageYOffset === 0) {
-        AOS.refresh();
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   const toggleMenu = () => {
