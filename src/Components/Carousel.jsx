@@ -13,9 +13,7 @@ const Carousel = () => {
     useContext(GlobalContext);
 
   useEffect(() => {
-    AOS.init({
-      once: false,
-    });
+    AOS.init();
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);

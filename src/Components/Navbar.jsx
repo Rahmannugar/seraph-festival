@@ -10,9 +10,7 @@ const Navbar = () => {
   const { hidden, setHidden } = useContext(GlobalContext);
 
   useEffect(() => {
-    AOS.init({
-      once: false,
-    });
+    AOS.init();
   }, []);
 
   const toggleMenu = () => {

@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const EventList = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="w-full px-5 sm:px-7 mt-16 lg:flex items-center justify-center lg:space-x-10">
       <div id="leftBox" className="lg:w-1/2  box-border">
         <div
           id="content"
+          data-aos="fade-right"
+          data-aos-duration="1300"
           className="px-5 py-5 lg:py-40 duration-500 bg-black text-white hover:bg-purple-600 hover:text-white"
         >
           <h1 className="md:text-3xl lg:text-5xl text-xl uppercase font-black py-3 lg:mt-[-100px]">
@@ -29,7 +37,11 @@ const EventList = () => {
 
       <div className="lg:w-1/2 lg:relative lg:h-full mt-5" id="events">
         <ul>
-          <li className="mb-5 lg:flex lg:space-x-3">
+          <li
+            className="mb-5 lg:flex lg:space-x-3"
+            data-aos="fade-left"
+            data-aos-duration="1300"
+          >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 lg:px-6 lg:py-12 py-3 text-white text-xl font-black bg-purple-600">
                 16th October 2024
@@ -53,7 +65,11 @@ const EventList = () => {
             </div>
           </li>
 
-          <li className="mb-5 lg:flex lg:space-x-3">
+          <li
+            className="mb-5 lg:flex lg:space-x-3"
+            data-aos="fade-right"
+            data-aos-duration="1300"
+          >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 text-white lg:px-6 lg:py-12 py-3 text-xl font-black bg-purple-600">
                 25th October 2024
@@ -81,7 +97,11 @@ const EventList = () => {
             </div>
           </li>
 
-          <li className="mb-5 lg:flex lg:space-x-3">
+          <li
+            className="mb-5 lg:flex lg:space-x-3"
+            data-aos="fade-left"
+            data-aos-duration="1300"
+          >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 lg:px-4 lg:py-12 py-3 text-white text-xl font-black bg-purple-600">
                 9th November 2024
@@ -107,7 +127,11 @@ const EventList = () => {
             </div>
           </li>
 
-          <li className="mb-5 lg:flex lg:space-x-3">
+          <li
+            className="mb-5 lg:flex lg:space-x-3"
+            data-aos="fade-right"
+            data-aos-duration="1300"
+          >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 lg:px-4 lg:py-12 py-3 text-white  text-xl font-black bg-purple-600">
                 10th November 2024

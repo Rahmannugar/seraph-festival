@@ -9,9 +9,7 @@ const NewsLetter = () => {
   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   useEffect(() => {
-    AOS.init({
-      once: false,
-    });
+    AOS.init();
     const validateEmail = () => {
       setIsValid(regexEmail.test(email));
     };
