@@ -226,11 +226,11 @@ const Registration = () => {
                     >
                       Register
                     </button>
-                    <p className="text-sm font-light text-gray-500 :text-gray-400">
+                    <p className="text-sm font-light text-gray-500 ">
                       Already registered?
                       <a
                         href="/event"
-                        className="font-medium text-primary-600 hover:underline :text-primary-500"
+                        className="font-medium text-purple-700 hover:underline "
                       >
                         Check our upcoming events
                       </a>
