@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white">
-      <nav className="flex items-center justify-between w-[92%] h-[12vh] md:h-[15vh] lg:h-[20vh] md:mt-0">
+      <nav className="flex items-center justify-between w-[92%] h-[12vh]  lg:h-[20vh] md:mt-0">
         <div>
           <a href="/">
             <img
