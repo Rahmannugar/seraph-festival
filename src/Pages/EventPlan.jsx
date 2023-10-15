@@ -25,7 +25,7 @@ const EventPlan = () => {
   }
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar />
       {hidden ? (
         <div>

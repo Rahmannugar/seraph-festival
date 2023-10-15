@@ -5,6 +5,8 @@ import Swal from "sweetalert2";
 import axios from "axios";
 const Navbar = React.lazy(() => import("../Components/Navbar"));
 const Footer = React.lazy(() => import("../Components/Footer"));
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Registration = () => {
   const {
@@ -28,6 +30,7 @@ const Registration = () => {
   const registerUrl = "https://seraphfestival-backend.onrender.com/register";
 
   useEffect(() => {
+    AOS.init();
     setTimeout(() => {
       setLoading(false);
     }, 3500);
@@ -68,7 +71,7 @@ const Registration = () => {
             }).then(() => {
               window.location.href = "/";
             });
-          }, 1500);
+          }, 1000);
         })
         .catch((err) => {
           console.error(err);
@@ -88,12 +91,16 @@ const Registration = () => {
   }
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar />
       {hidden ? (
         <div>
           <section className="text-black mt-10 xl:mt-24 xl:mb-40">
-            <div className="text-center text-white bg-purple-700 py-10 mx-5 sm:mx-auto sm:max-w-xl xl:mb-36 rounded-lg shadow-2xl  md:text-2xl font-bold">
+            <div
+              data-aos="flip-up"
+              data-aos-duration="1000"
+              className="text-center text-white bg-purple-700 py-10 mx-5 sm:mx-auto sm:max-w-xl xl:mb-36 rounded-lg shadow-2xl  md:text-2xl font-bold"
+            >
               <h1 className="py-3 px-5">
                 Event venue -
                 <i>Tafawa Balewa Square, Awolowo Rd, Onikan, Lagos Island.</i>
@@ -109,7 +116,7 @@ const Registration = () => {
                     Registration form
                   </h1>
                   <form className="space-y-4 md:space-y-6">
-                    <div>
+                    <div data-aos="fade-up-right" data-aos-duration="1000">
                       <label
                         htmlFor="firstname"
                         className="block mb-2 text-sm font-medium text-gray-900 :text-white"
@@ -130,7 +137,7 @@ const Registration = () => {
                       />
                     </div>
 
-                    <div>
+                    <div data-aos="fade-down-left" data-aos-duration="1000">
                       <label
                         htmlFor="lastname"
                         className="block mb-2 text-sm font-medium text-gray-900 :text-white"
@@ -151,7 +158,7 @@ const Registration = () => {
                       />
                     </div>
 
-                    <div>
+                    <div data-aos="fade-down-right" data-aos-duration="1000">
                       <label className="block mb-2 text-sm font-medium text-gray-900 :text-white">
                         Select Gender:
                       </label>
@@ -165,7 +172,7 @@ const Registration = () => {
                       </select>
                     </div>
 
-                    <div>
+                    <div data-aos="fade-up" data-aos-duration="1000">
                       <label className="block mb-2 text-sm font-medium text-gray-900 :text-white">
                         Select state of residence:
                       </label>
@@ -179,7 +186,7 @@ const Registration = () => {
                       </select>
                     </div>
 
-                    <div>
+                    <div data-aos="fade-up-left" data-aos-duration="1000">
                       <label
                         htmlFor="email"
                         className="block mb-2 text-sm font-medium text-gray-900 :text-white"
@@ -220,13 +227,19 @@ const Registration = () => {
                       </div>
                     </div>
                     <button
+                      data-aos="fade-up"
+                      data-aos-duration="1000"
                       type="submit"
                       onClick={handleRegister}
                       className="w-full bg-purple-600 text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center :bg-primary-600 :hover:bg-primary-700 :focus:ring-primary-800"
                     >
                       Register
                     </button>
-                    <p className="text-sm font-light text-gray-500 ">
+                    <p
+                      data-aos="fade-right"
+                      data-aos-duration="1000"
+                      className="text-sm font-light text-gray-500 "
+                    >
                       Already registered?
                       <a
                         href="/event"

@@ -27,7 +27,7 @@ const About = () => {
   }
 
   return (
-    <div>
+    <div className="overflow-hidden">
       <Navbar />
       {hidden ? (
         <div>
