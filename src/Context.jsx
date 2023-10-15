@@ -10,10 +10,11 @@ const AppContext = ({ children }) => {
   const [timerHours, setTimerHours] = useState(0);
   const [timerMinutes, setTimerMinutes] = useState(0);
   const [timerSeconds, setTimerSeconds] = useState(0);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(false);
+  const [show, setShow] = useState(false);
 
   const contextValue = {
     loading,
@@ -36,10 +37,12 @@ const AppContext = ({ children }) => {
     setIsValid,
     email,
     setEmail,
-    lastName,
-    setLastName,
-    firstName,
-    setFirstName,
+    lastname,
+    setLastname,
+    firstname,
+    setFirstname,
+    show,
+    setShow,
   };
 
   return (

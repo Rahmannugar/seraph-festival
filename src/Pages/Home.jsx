@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import BarLoader from "react-spinners/BarLoader";
+import { motion } from "framer-motion";
 import { GlobalContext } from "../Context";
 const Navbar = React.lazy(() => import("../Components/Navbar"));
 const Carousel = React.lazy(() => import("../Components/Carousel"));
@@ -36,7 +37,11 @@ const Home = () => {
           <Timer />
           <EventList />
 
-          <div className="text-center mt-20 lg:w-[1000px] md:mx-auto md:grid md:grid-cols-2 md:gap-4 ">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-center mt-20 lg:w-[1000px] md:mx-auto md:grid md:grid-cols-2 md:gap-4 "
+          >
             <a href="/event">
               <h2 className="font-bold text-xl lg:text-3xl bg-purple-900 hover:bg-purple-600 duration-200 ease-in-out mt-10 py-5 md:py-8 text-white mx-5 md:mx-7 rounded-xl shadow-2xl">
                 Events{" ->"}
@@ -57,7 +62,7 @@ const Home = () => {
                 Community{" ->"}
               </h2>
             </a>
-          </div>
+          </motion.div>
 
           <NewsLetter />
           <Footer />

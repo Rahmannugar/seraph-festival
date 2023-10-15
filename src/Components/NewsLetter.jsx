@@ -19,14 +19,15 @@ const NewsLetter = () => {
       Swal.fire("Error", "Email address is not valid", "error");
     }
     if (isValid) {
-      Swal.fire(
-        "Subscribed!",
-        "You have successfully subscribed to our newsletter!",
-        "success"
-      );
       setTimeout(() => {
-        window.location.href = "/";
-      }, 2000);
+        Swal.fire({
+          title: "Subscribed!",
+          text: "You have successfully subscribed to our newsletter!",
+          icon: "success",
+        }).then(() => {
+          window.location.href = "/";
+        });
+      }, 1500);
     }
   };
   return (
