@@ -4,12 +4,15 @@ const Navbar = React.lazy(() => import("../Components/Navbar"));
 const Footer = React.lazy(() => import("../Components/Footer"));
 import BarLoader from "react-spinners/BarLoader";
 import about from "../images/BCF_2023_Sunday_WR-648-Dominic-Mould-342-1.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const About = () => {
   const { loading, setLoading } = useContext(GlobalContext);
   const { hidden } = useContext(GlobalContext);
 
   useEffect(() => {
+    AOS.init();
     setTimeout(() => {
       setLoading(false);
     }, 3500);
@@ -33,12 +36,18 @@ const About = () => {
         <div>
           <div className="lg:py-20 py-5 md:mx-6 lg:mx-10 xl:mx-20 md:flex md:space-x-7 lg:space-x-10 xl:space-x-20 md:items-center">
             <img
+              data-aos="fade-down"
+              data-aos-duration="1000"
               className="md:h-[600px] md:py-5 md:rounded-lg"
               src={about}
               alt="about"
             />
             <div className="text-center px-5 pt-10">
-              <div className="mb-5">
+              <div
+                className="mb-5"
+                data-aos="fade-right"
+                data-aos-duration="1000"
+              >
                 <h1 className="font-black text-2xl leading-5  bg-[#9934F1] py-7 text-white">
                   Our Mission:
                 </h1>
@@ -50,7 +59,11 @@ const About = () => {
                   values and fellowship.
                 </p>
               </div>
-              <div className="mt-10">
+              <div
+                className="mt-10"
+                data-aos="fade-left"
+                data-aos-duration="1000"
+              >
                 <h1 className="font-black text-2xl leading-5  bg-[#9934F1] py-7 text-white">
                   Our Heritage:
                 </h1>
@@ -63,7 +76,11 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="text-center md:px-48 md:mt-20 px-5 max-w-6xl mx-auto">
+          <div
+            className="text-center md:px-48 md:mt-20 px-5 max-w-6xl mx-auto"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <h1 className="font-black text-2xl leading-5 py-7 bg-[#9934F1] text-white">
               What We Offer:
             </h1>
@@ -86,7 +103,11 @@ const About = () => {
                 opportunities for charitable activities and outreach projects.
               </li>
             </ul>
-            <p className="font-bold text-xl mt-10">
+            <p
+              className="font-bold text-xl mt-10"
+              data-aos="fade-down"
+              data-aos-duration="1000"
+            >
               Join Us: Seraph Christian Festival is a place where you can deepen
               your faith, connect with fellow believers, and find spiritual
               renewal. We invite you to join us on this sacred journey.
