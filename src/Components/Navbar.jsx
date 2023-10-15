@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import SeraphFestival from "../images/photo_5987639389850811976_y.jpg";
 import { FaBars } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 import { GlobalContext } from "../Context";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
   const { hidden, setHidden } = useContext(GlobalContext);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const toggleMenu = () => {
     setHidden(!hidden);
@@ -14,7 +20,7 @@ const Navbar = () => {
   return (
     <header className="bg-white">
       <nav className="flex items-center justify-between w-[92%] h-[12vh]  lg:h-[20vh] md:mt-0">
-        <div>
+        <div data-aos="fade-right" data-aos-duration="500">
           <a href="/">
             <img
               src={SeraphFestival}
@@ -45,7 +51,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <button>
+          <button data-aos="fade-down" data-aos-duration="800">
             <a href="/register">
               <button className="bg-purple-700 font-semibold text-white md:px-5 md:py-2 px-3 py-2 rounded-sm hover:bg-pink-700 transition-all duration-200">
                 Register
@@ -55,10 +61,14 @@ const Navbar = () => {
           {hidden ? (
             <FaBars
               onClick={toggleMenu}
+              data-aos="fade-left"
+              data-aos-duration="400"
               className="text-3xl cursor-pointer md:hidden"
             />
           ) : (
             <FaX
+              data-aos="fade-left"
+              data-aos-duration="600"
               onClick={toggleMenu}
               className="text-3xl cursor-pointer md:hidden"
             />
