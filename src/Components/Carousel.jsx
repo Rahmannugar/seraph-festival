@@ -41,7 +41,7 @@ const Carousel = () => {
         <div
           className={`flex transition ease-out duration-40}`}
           data-aos="fade-up"
-          data-aos-duration="1000"
+          data-aos-duration="700"
           style={{
             transform: `translateX(-${current * 100}%)`,
           }}
@@ -77,7 +77,7 @@ const Carousel = () => {
         <div
           className="absolute bottom-6 py-4 flex justify-center gap-3 w-full"
           data-aos="fade-up"
-          data-aos-duration="1000"
+          data-aos-duration="700"
         >
           {images.map((image, index) => (
             <div

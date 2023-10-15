@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import BarLoader from "react-spinners/BarLoader";
-import { motion } from "framer-motion";
+
 import { GlobalContext } from "../Context";
 const Navbar = React.lazy(() => import("../Components/Navbar"));
 const Carousel = React.lazy(() => import("../Components/Carousel"));
@@ -8,12 +8,15 @@ const Timer = React.lazy(() => import("../Components/Timer"));
 const EventList = React.lazy(() => import("../Components/EventList"));
 const NewsLetter = React.lazy(() => import("../Components/NewsLetter"));
 const Footer = React.lazy(() => import("../Components/Footer"));
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   const { loading, setLoading } = useContext(GlobalContext);
   const { hidden } = useContext(GlobalContext);
 
   useEffect(() => {
+    AOS.init();
     setTimeout(() => {
       setLoading(false);
     }, 3500);
@@ -37,32 +40,32 @@ const Home = () => {
           <Timer />
           <EventList />
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-center mt-20 lg:w-[1000px] md:mx-auto md:grid md:grid-cols-2 md:gap-4 "
-          >
-            <a href="/event">
+          <div className="text-center mt-20 lg:w-[1000px] md:mx-auto md:grid md:grid-cols-2 md:gap-4">
+            <a href="/event" data-aos="fade-right" data-aos-duration="1000">
               <h2 className="font-bold text-xl lg:text-3xl bg-purple-900 hover:bg-purple-600 duration-200 ease-in-out mt-10 py-5 md:py-8 text-white mx-5 md:mx-7 rounded-xl shadow-2xl">
                 Events{" ->"}
               </h2>
             </a>
-            <a href="/register">
+            <a href="/register" data-aos="fade-left" data-aos-duration="1000">
               <h2 className="font-bold text-xl lg:text-3xl bg-purple-900 hover:bg-purple-600 duration-200 ease-in-out mt-10 py-5 md:py-8 text-white mx-5 md:mx-7 rounded-xl shadow-2xl">
                 Register{" ->"}
               </h2>
             </a>
-            <a href="/about">
+            <a href="/about" data-aos="fade-right" data-aos-duration="1000">
               <h2 className="font-bold text-xl lg:text-3xl bg-purple-900 hover:bg-purple-600 duration-200 ease-in-out mt-10 py-5 md:py-8 text-white mx-5 md:mx-7 rounded-xl shadow-2xl">
                 About Seraph Festival{" ->"}
               </h2>
             </a>
-            <a href="https://www.twitter.com/NugarRahman">
+            <a
+              href="https://www.twitter.com/NugarRahman"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
               <h2 className="font-bold text-xl lg:text-3xl bg-purple-900 hover:bg-purple-600 duration-200 ease-in-out mt-10 py-5 md:py-8 text-white mx-5 md:mx-7 rounded-xl shadow-2xl">
                 Community{" ->"}
               </h2>
             </a>
-          </motion.div>
+          </div>
 
           <NewsLetter />
           <Footer />
