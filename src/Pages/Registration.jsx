@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../Context";
 import BarLoader from "react-spinners/BarLoader";
 import Swal from "sweetalert2";
-import axios, { Axios } from "axios";
+import axios from "axios";
 const Navbar = React.lazy(() => import("../Components/Navbar"));
 const Footer = React.lazy(() => import("../Components/Footer"));
 
@@ -22,7 +22,7 @@ const Registration = () => {
   } = useContext(GlobalContext);
 
   const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const countryUrl = "https://restcountries.com/v3.1/all";
+  const countryUrl = "https://states-and-cities.com/api/v1/states.";
   const registerUrl = "https://seraphfestival-backend.onrender.com/register";
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Registration = () => {
     axios
       .get(countryUrl)
       .then((res) => {
-        //console.log(res.data[0].name);
+        console.log(res.data);
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -89,7 +89,7 @@ const Registration = () => {
       {hidden ? (
         <div>
           <section className="text-black mt-10 xl:mt-24 xl:mb-40">
-            <div className="text-center text-white bg-purple-700 py-10 mx-5 sm:mx-auto sm:max-w-xl xl:mb-36 rounded-lg shadow text-xl md:text-2xl lg:text-3xl font-bold">
+            <div className="text-center text-white bg-purple-700 py-10 mx-5 sm:mx-auto sm:max-w-xl xl:mb-36 rounded-lg shadow-2xl  md:text-2xl font-bold">
               <h1 className="py-3 px-5">
                 Event venue -
                 <i>Tafawa Balewa Square, Awolowo Rd, Onikan, Lagos Island.</i>
@@ -99,7 +99,7 @@ const Registration = () => {
               </h1>
             </div>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-              <div className="w-full border-2 rounded-lg shadow md:mt-0 sm:max-w-md xl:p-0 :bg-gray-800 :border-gray-700">
+              <div className="w-full border-2 rounded-lg shadow-xl md:mt-0 sm:max-w-md xl:p-0 :bg-gray-800 :border-gray-700">
                 <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
                   <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
                     Registration form
