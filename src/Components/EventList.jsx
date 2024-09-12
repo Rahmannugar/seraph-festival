@@ -44,7 +44,7 @@ const EventList = () => {
           >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 lg:px-6 lg:py-12 py-3 text-white text-xl font-black bg-purple-600">
-                16th October 2024
+                16th October 2025
               </h2>
             </div>
             <div
@@ -72,7 +72,7 @@ const EventList = () => {
           >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 text-white lg:px-6 lg:py-12 py-3 text-xl font-black bg-purple-600">
-                25th October 2024
+                25th October 2025
               </h2>
             </div>
             <div
@@ -104,7 +104,7 @@ const EventList = () => {
           >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 lg:px-4 lg:py-12 py-3 text-white text-xl font-black bg-purple-600">
-                9th November 2024
+                9th November 2025
               </h2>
             </div>
             <div
@@ -134,24 +134,24 @@ const EventList = () => {
           >
             <div id="date" className="mb-3 text-center">
               <h2 className="hover:bg-black duration-500 lg:px-4 lg:py-12 py-3 text-white  text-xl font-black bg-purple-600">
-                10th November 2024
+                10th November 2025
               </h2>
             </div>
             <div
               id="details"
               className="border hover:bg-black hover:text-white duration-500 border-black px-5"
             >
-              <h2 className="font-bold mt-3 mb-2">Seraph Festival: 2024.</h2>
+              <h2 className="font-bold mt-3 mb-2">Seraph Festival: 2025.</h2>
               <p className="text-xs mb-3">
                 Get ready for an unforgettable experience at Seraph Festival
-                2024! Join us for a celebration of faith, community, and
+                2025! Join us for a celebration of faith, community, and
                 inspiration. This year promises a lineup of powerful speakers,
                 uplifting music, and engaging activities that will strengthen
                 your spiritual journey. Come together with fellow believers to
                 worship, connect, and celebrate the seraphic spirit within us
                 all. Mark your calendars and be part of an enriching and
                 joy-filled event that will leave you spiritually refreshed and
-                uplifted. See you at Seraph Festival 2024 – where faith comes to
+                uplifted. See you at Seraph Festival 2025 – where faith comes to
                 life!
               </p>
               <div className="flex items-center justify-center"></div>

@@ -106,7 +106,8 @@ const Registration = () => {
                 <i>Tafawa Balewa Square, Awolowo Rd, Onikan, Lagos Island.</i>
               </h1>
               <h1 className="py-3 px-5">
-                Event Date - <i>10th, November, 2024.</i>
+                Event Date - <i>10th, November, 2025
+                  .</i>
               </h1>
             </div>
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">

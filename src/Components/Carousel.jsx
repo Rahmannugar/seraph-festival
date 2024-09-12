@@ -71,7 +71,7 @@ const Carousel = () => {
         </div>
 
         <div className="bottom-20 md:text-4xl px-10 py-3 text-center text-2xl absolute font-bold text-white bg-purple-400 w-screen">
-          <h1> Seraph Festival: 2024</h1>
+          <h1> Seraph Festival: 2025</h1>
         </div>
 
         <div
@@ -104,7 +104,7 @@ const Carousel = () => {
             />
           ))}
           <h1 className=" hidden md:block md:bg-purple-400 text-white px-7 py-6 rounded-r-lg font-bold text-5xl  absolute">
-            Seraph Festival: 2024
+            Seraph Festival: 2025
           </h1>
         </div>
       </div>
