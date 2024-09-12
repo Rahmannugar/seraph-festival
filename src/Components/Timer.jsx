@@ -18,7 +18,7 @@ const Timer = () => {
   let interval;
 
   const startTimer = () => {
-    const countDownDate = new Date("November 10,2024").getTime();
+    const countDownDate = new Date("November 10,2025").getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -57,7 +57,7 @@ const Timer = () => {
         data-aos="fade-right"
         data-aos-duration="1200"
       >
-        Date: 10th, November 2024.
+        Date: 10th, November 2025.
       </h1>
       <div id="timer">
         <div
